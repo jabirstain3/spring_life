@@ -7,16 +7,19 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState( null );
+    const [ authloading , setAuthloading ] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
     // Creat user
     const createUser = (email, password) =>{
+        setAuthloading(true);
         return  createUserWithEmailAndPassword(auth, email, password);
     }
 
     // Authintication
     const logInUser = (email, password) =>{
+        setAuthloading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -30,6 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     // log out
     const logOut = () => {
+        setAuthloading(true);
         return signOut(auth);
     }
 
@@ -38,8 +42,9 @@ export const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentuser =>{
             if(currentuser){
                 setUser(currentuser);
-                // console.log(currentuser);
-            }
+                setAuthloading(false);
+            //     console.log(currentuser);
+            } else setUser(null);
         });
         
         return ()=> {
@@ -48,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     },[])
 
     return (
-        <AuthContext.Provider value={{ onAuthStateChanged, user, setUser, createUser, logInUser, googleUser, facebookUser, logOut }}>
+        <AuthContext.Provider value={{ onAuthStateChanged, user, setUser, createUser, logInUser, googleUser, facebookUser, logOut, authloading }}>
             {children}
         </AuthContext.Provider>
     );

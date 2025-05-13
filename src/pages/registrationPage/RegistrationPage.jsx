@@ -3,21 +3,30 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
+import { useToRoute } from "../../hooks/useToRoute";
+import Loader from "../../components/loader/Loader";
 // import { useContext } from "react";
 
 const RegistrationPage = () => {
     const [ show, setShow ] = useState(false);
     const  [ currectFormate, setcurrectFormate ] = useState(true);
-    const { createUser, googleUser, facebookUser } = useContext(AuthContext);
+    const { createUser, googleUser, facebookUser, authLoading } = useContext(AuthContext);
+    const goTo = useToRoute();
+
+    if (authLoading){
+        return <div className="w-full h-screen">
+            <Loader/>
+        </div>
+    }
 
     const HandelRegistrationWithFacebook = () =>{
         facebookUser()
-        console.log("Facebook");
-        
+        // console.log("Facebook");
     }
 
     const HandelRegistrationWithGoogle = () =>{
         googleUser()
+        goTo('/');
     }
 
     const isValidPassword = (pwd) => {
@@ -47,17 +56,11 @@ const RegistrationPage = () => {
             .then((result) =>{
                 console.log(result.user);
                 e.target.reset();
-                // navigate('/');
+                goTo('/login');
             })
             .catch((error)=>{
                 console.log(error.message);
             })
-        // createUser(email, password)
-        // .then((result) =>{
-        //     console.log(result.user)
-        // })
-        // .catch((error)=>{
-        //     console.log(error.message); })
     }
 
     return (
