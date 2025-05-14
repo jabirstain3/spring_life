@@ -1,15 +1,22 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useToRoute } from "../../hooks/useToRoute";
 
 const LogInPage = () => { 
-
     const [show, setShow] = useState(false)
+    const location = useLocation();
     const goTo = useToRoute();
+    console.log(location);
+    
+
     const { logInUser, googleUser, /*facebookCreateUser*/ }= useContext(AuthContext);
+
+    const dest = location.state?.from?.pathname || "/";
+    // console.log(dest);
+    
 
     const handelLogInWithEmail = (e) =>{
 
@@ -22,9 +29,9 @@ const LogInPage = () => {
 
         logInUser(email, password)
         .then((result) =>{
-            console.log(result.user);
+            // console.log(result.user);
             e.target.reset();
-            goTo('/');
+            goTo(dest);
         })
         .catch((error)=>{
             console.log(error.message);
@@ -34,8 +41,8 @@ const LogInPage = () => {
     const handelLogInWithGoogle = () => {
         googleUser()
         .then((result) =>{
-            console.log(result.user);
-            goTo('/');
+            // console.log(result.user);
+            goTo(dest);
         })
         .catch((error)=>{
             console.log(error.message);
@@ -84,7 +91,7 @@ const LogInPage = () => {
 
                     {/* <p className="text-center">Forget password? <NavLink className={'hover:text-black '} to={'/forget-password'} >Reset Password!</NavLink></p> */}
 
-                    <p className="text-center">Don't have an account? <NavLink className={'hover:text-black '} to={'/registration'} >Registar Now.</NavLink></p>
+                    <p className="text-center">Don't have an account? <NavLink state={dest} className={'hover:text-black '} to={'/registration'} >Registar Now.</NavLink></p>
                     </form>
             </div>
         </div>

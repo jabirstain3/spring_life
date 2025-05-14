@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -11,6 +11,7 @@ const RegistrationPage = () => {
     const [ show, setShow ] = useState(false);
     const  [ currectFormate, setcurrectFormate ] = useState(true);
     const { createUser, googleUser, facebookUser, authLoading } = useContext(AuthContext);
+        const location = useLocation();
     const goTo = useToRoute();
 
     if (authLoading){
@@ -26,7 +27,7 @@ const RegistrationPage = () => {
 
     const HandelRegistrationWithGoogle = () =>{
         googleUser()
-        goTo('/');
+        goTo(dest);
     }
 
     const isValidPassword = (pwd) => {
@@ -39,9 +40,10 @@ const RegistrationPage = () => {
         }
     };
 
+    const dest = location.state?.from?.pathname || "/";
+
     const HandelRegistration = (e) =>{
         // const { createUser } = useContext(AuthContextProvider);
-        
         e.preventDefault();
         console.log(e);
         const name = e.target.name.value;

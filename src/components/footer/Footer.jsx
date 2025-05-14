@@ -7,7 +7,7 @@ const Footer = () => {
     const activeStyle = "text-[1rem] hover:text-[#328f3f] text-[#61CE70]";
     const inActiveStyle = "text-[1rem] text-[#424242] hover:text-[#328f3f] cursor-pointer transition-all duration-200";
     return (
-        <footer className="sectionBase w-full mx-4 md:mx-auto bg-white my-10 md:my-12">
+        <footer className="bg-white sectionBase mx-4 md:mx-auto my-10 md:my-12">
             <div className="flex justify-between gap-[30px] flex-col md:flex-row flex-wrap w-full">
                 <div className="w-full sm:w-[25%] ">
                     <NavLink to={'/'}><img src={logo} alt="Spring Life" className="w-[150px] mb-[20px]"/></NavLink>

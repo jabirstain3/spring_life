@@ -14,15 +14,13 @@ import { NavLink } from "react-router";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
 import { useToRoute } from "../../hooks/useToRoute";
 
-const Navbar = () => {
+const Navbar = () => { 
     const [accountMenuOpen, setAccountMenuOpen] = useState(false);
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const goTo = useToRoute();
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
     
-
-    const { displayName: name, photoURL: photo, } = user || { displayName:'User', photoURL: 'notavailavle', };
+    const { displayName:name, photoURL:photo, } = user || { displayName:"User", photoURL: "notavailavle", };
 
     const navlinks = [
         {name: "About", path: "/about"},
@@ -38,7 +36,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="sectionBase mx-auto flex items-center justify-between w-full relative">
+        <nav className="sectionBase mx-auto flex items-center justify-between relative">
 
             {/* logo */}
             <NavLink to={'/'}>
@@ -73,7 +71,7 @@ const Navbar = () => {
                         <h1 className="text-[1rem] font-[400] text-gray-600 sm:block hidden">{name}</h1>
 
                         <div
-                            className={`${accountMenuOpen ? "translate-y-0 opacity-100 z-[1]" : "translate-y-[10px] opacity-0 z-[-1]"} bg-white w-max rounded-md absolute top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}>
+                            className={`${accountMenuOpen ? "translate-y-0 opacity-100 z-[10]" : "translate-y-[10px] opacity-0 z-[-1]"} bg-white w-max rounded-md absolute top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}>
                             <button className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50">
                                 <FiUser/>
                                 View Profile
@@ -102,8 +100,7 @@ const Navbar = () => {
             </div>
 
             {/* mobile sidebar */}
-            <aside
-                className={` ${mobileSidebarOpen ? "translate-x-0 opacity-100 z-20" : "translate-x-[200px] opacity-0 z-[-1]"} w-[150px] md:hidden bg-white p-4 text-center absolute top-[55px] right-0 sm:w-[300px] rounded-md transition-all duration-300`}>
+            <aside className={` ${mobileSidebarOpen ? "translate-x-0 opacity-100 z-20" : "hidden translate-x-[200px] opacity-0 z-[-1]"} w-[150px] md:hidden bg-white p-4 text-center absolute top-[55px] right-0 sm:w-[300px] rounded-md transition-all duration-300`}>
                 <ul className="items-start gap-[10px] text-[1rem] text-gray-600 flex flex-col">
                     <li className={`border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize hover:border-b-[#61CE70] hover:text-[#328f3f]`}>
                         <NavLink to='/' className={({ isActive, }) => isActive ? "hover:text-[#328f3f] text-[#61CE70]" : "" }>Home</NavLink> 
