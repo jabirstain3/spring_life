@@ -4,15 +4,21 @@ import { IoTimerOutline } from "react-icons/io5";
 import { VscSymbolMethod } from "react-icons/vsc";
 import { HiOutlineCalendarDateRange } from "react-icons/hi2";
 import CommentDisplayLayout from "../commentDisplayLayout/CommentDisplayLayout";
+import { useToast } from "../../hooks/useToast"
 
 const ServicesDetailsLayout = () => {
     // const [isFavorite, setIsFavorite] = useState()
     const { state } = useLocation();
+        const toast = useToast()
     // console.log(state);
     
     const { image, serviceName, category, pricing, description, duration, counselor, } = state;
     const data = duration.split(" ");
     // console.log(data);
+
+    const handelBooking = () => {
+        toast("success" , "Booking Confirmed")
+    }
     
     return (
         <div className="sectionBase mx-auto">
@@ -63,7 +69,7 @@ const ServicesDetailsLayout = () => {
                 </div>
 
                 <div className="w-full max-w-md mx-auto">
-                    <button className="w-full px-6 py-3 bg-[#328f3f] text-white shadow-lg text-[1.2rem] font-semibold rounded-md hover:bg-[#61CE70] mx-auto">Book A Slot</button>
+                    <button className="w-full px-6 py-3 bg-[#328f3f] text-white shadow-lg text-[1.2rem] font-semibold rounded-md hover:bg-[#61CE70] mx-auto" onClick={handelBooking}>Book A Slot</button>
                 </div>
             </div>
             <div className="w-full max-w-4xl mx-auto mb-6 md:mb-10">

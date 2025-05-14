@@ -1,7 +1,7 @@
 import { createContext, useEffect } from "react";
 import { useState } from "react";
 import auth from "../../firebase/firebase.config";
-import { GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, onAuthStateChanged, signOut, updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext({});
 
@@ -52,8 +52,12 @@ export const AuthProvider = ({ children }) => {
         }
     },[])
 
+    const updateUserProfile = ( updatedData ) => {
+        return updateProfile(auth.currentUser, updatedData)
+    }
+
     return (
-        <AuthContext.Provider value={{ onAuthStateChanged, user, setUser, createUser, logInUser, googleUser, facebookUser, logOut, authloading }}>
+        <AuthContext.Provider value={{ onAuthStateChanged, user, setUser, createUser, logInUser, googleUser, facebookUser, logOut, authloading, updateUserProfile }}>
             {children}
         </AuthContext.Provider>
     );

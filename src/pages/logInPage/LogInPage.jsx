@@ -4,11 +4,14 @@ import { AuthContext } from "../../utils/context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useToRoute } from "../../hooks/useToRoute";
+import { useToast } from "../../hooks/useToast"
+import { Bounce, ToastContainer } from "react-toastify";
 
 const LogInPage = () => { 
     const [show, setShow] = useState(false)
     const location = useLocation();
     const goTo = useToRoute();
+    const toast = useToast()
     console.log(location);
     
 
@@ -30,10 +33,12 @@ const LogInPage = () => {
         logInUser(email, password)
         .then((result) =>{
             // console.log(result.user);
+            toast("success" , "Loged In Successfully.")
             e.target.reset();
             goTo(dest);
         })
         .catch((error)=>{
+            toast("error" , "Authintication failed.")
             console.log(error.message);
         })
     }
@@ -42,9 +47,11 @@ const LogInPage = () => {
         googleUser()
         .then((result) =>{
             // console.log(result.user);
+            toast("success" , "Loged In Successfully.")
             goTo(dest);
         })
         .catch((error)=>{
+            toast("error" , "Authintication failed.")
             console.log(error.message);
         })
         // console.log("Google");
@@ -94,6 +101,8 @@ const LogInPage = () => {
                     <p className="text-center">Don't have an account? <NavLink state={dest} className={'hover:text-black '} to={'/registration'} >Registar Now.</NavLink></p>
                     </form>
             </div>
+
+            <ToastContainer position="bottom-right" autoClose={3000} limit={4} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" transition={Bounce} />
         </div>
     );
 };

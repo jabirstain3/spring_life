@@ -5,14 +5,17 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
 import { useToRoute } from "../../hooks/useToRoute";
 import Loader from "../../components/loader/Loader";
+import { useToast } from "../../hooks/useToast";
+import { Bounce, ToastContainer } from "react-toastify";
 // import { useContext } from "react";
 
 const RegistrationPage = () => {
     const [ show, setShow ] = useState(false);
     const  [ currectFormate, setcurrectFormate ] = useState(true);
-    const { createUser, googleUser, facebookUser, authLoading } = useContext(AuthContext);
+    const { createUser, googleUser, facebookUser, authLoading, updateUserProfile } = useContext(AuthContext);
         const location = useLocation();
     const goTo = useToRoute();
+    const toast = useToast()
 
     if (authLoading){
         return <div className="w-full h-screen">
@@ -53,14 +56,24 @@ const RegistrationPage = () => {
 
         const user = { name, email, password, photo };
         console.log(user);
+        const userinfo =  { displayName:name, photoURL:photo, }
         
         createUser(email, password)
             .then((result) =>{
                 console.log(result.user);
                 e.target.reset();
-                goTo('/login');
-            })
+                updateUserProfile(userinfo)
+                    .then(() =>{
+                        toast("success" , "Registered Successfully.")
+                        goTo('/login');
+                    })
+                    .catch((error)=>{
+                        toast("error" , "Registeration failed.")
+                        console.log(error.message);
+                    })
+                })
             .catch((error)=>{
+                toast("error" , "Registeration failed.")
                 console.log(error.message);
             })
     }
@@ -112,6 +125,9 @@ const RegistrationPage = () => {
                     <p className="text-center">Have an account? <NavLink className={'hover:text-black '} to={'/login'} >Log In!</NavLink></p>
                     </form>
             </div>
+
+            <ToastContainer position="bottom-right" autoClose={3000} limit={4} hideProgressBar={false} newestOnTop={false} closeOnClick={false} rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="colored" transition={Bounce} />
+
         </div>
     );
 };

@@ -3,10 +3,13 @@ import { IoTimerOutline} from "react-icons/io5";
 import {FiArrowUpRight} from "react-icons/fi";
 import {RiHeartAddLine, RiHeartFill} from "react-icons/ri";
 import { useToRoute } from "../../hooks/useToRoute";
+import { useToast } from "../../hooks/useToast";
 
 const ServicesCard = ({ services }) => {
     const goTo = useToRoute()
     const [isFavorite, setIsFavorite] = useState(false);
+    const toast = useToast()
+
     const { id, image, serviceName, category, pricing, description, duration, counselor, } = services
 
     const handelDetails = () => {
@@ -54,10 +57,10 @@ const ServicesCard = ({ services }) => {
                     <button className="p-[9px] rounded-full border-2 border-[#328f3f]">
                         {
                             isFavorite ? (
-                                <RiHeartFill onClick={() => setIsFavorite(false)} className="text-red-700 text-[1.3rem]"/>
+                                <RiHeartFill onClick={() => {setIsFavorite(false); toast("warn" , "Removed from Wishlist");}} className="text-red-700 text-[1.3rem]"/>
                             ) : 
                             (
-                                <RiHeartAddLine onClick={() => setIsFavorite(true)}className="text-[#328f3f] text-[1.3rem]"/>
+                                <RiHeartAddLine onClick={() => {setIsFavorite(true); toast("success" , "Added to Wishlist");}}className="text-[#328f3f] text-[1.3rem]"/>
                             )
                         }
                     </button>

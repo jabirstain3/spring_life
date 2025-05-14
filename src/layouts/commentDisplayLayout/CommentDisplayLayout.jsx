@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import CommentCard from "../../components/commentCard/CommentCard";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
+import { useToast } from "../../hooks/useToast"
 
 const CommentDisplayLayout = ({ srvs }) => {
+    const toast = useToast()
     const [ comments, setComments ] = useState([
         // {
         //     cmntId:2341221, 
@@ -25,9 +27,11 @@ const CommentDisplayLayout = ({ srvs }) => {
             image: user.photoURL, 
             userName: user.displayName, 
             commentText: text, 
-            servicesName: srvs }
+            servicesName: srvs 
+        }
 
-            setComments([...comments, commentObj])
+        toast("success" , "Comment Uploaded.")
+        setComments([...comments, commentObj])
     }
 
     return (
