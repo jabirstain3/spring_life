@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "image": "https://example.com/images/career-session.jpg",
-        "serviceName": "Career Counseling Session",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.isDCbDSOu1Ql3ZXzZK5tRQHaEA%3Fpid%3DApi&f=1&ipt=bbcb45be9b1a234fb6b3e71d2d2e60f1fe82e39ac6cf7cb44673ecf327db9808&ipo=images",
+        "serviceName": "Career Counseling Session for School Student",
         "category": "Online",
         "description": "One-on-one personalized session to discuss your career path and make informed decisions.",
         "pricing": "$40",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "image": "https://example.com/images/resume-review.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.kvyRLeadn-DvJFvVIghWrwHaE8%26cb%3Diwc2%26pid%3DApi&f=1&ipt=010c9d90d2cc7b1ff738bb42f4d6e5f1bd96cd9d8b33c815a053d9440695e897&ipo=images",
         "serviceName": "Resume Review",
         "category": "Online",
         "description": "Detailed review of your resume with suggestions for improvement and formatting.",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "image": "https://example.com/images/mock-interview.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.iiotYQ8Ql6pEFLs6IN3mnAHaEK%26pid%3DApi&f=1&ipt=f45867c63283f15863dc5fe146b8604fe4bbac6a06d0d7392b4e59cb02d04294&ipo=images",
         "serviceName": "Mock Interview Practice",
         "category": "Online/One-on-One",
         "description": "Simulated interview session to build confidence and receive actionable feedback.",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "image": "https://example.com/images/group-session.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.MvGwiN7BfnfTumx4pJ1uNAHaEK%3Fcb%3Diwc2%26pid%3DApi&f=1&ipt=57b4705f9fd04e76c0e7f80663caa9377c163d90cea5309226e6d289bc1d486f&ipo=images",
         "serviceName": "Group Career Planning Workshop",
         "category": "Offline/Group",
         "description": "Interactive group session focusing on career exploration and goal setting.",
@@ -45,18 +45,18 @@
     },
     {
         "id": 5,
-        "image": "https://example.com/images/linkedin-optimization.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FKZt3L6P4IXw%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=7981a2b7a5a88eda00514fb3487f1e537d3961420a583e928ad1a07360f073a2",
         "serviceName": "LinkedIn Profile Optimization",
         "category": "Online",
         "description": "Upgrade your LinkedIn profile to attract recruiters and showcase your skills.",
         "pricing": "$30",
         "duration": "09-12-24 6:00 PM - 7:00 PM",
-        "counselor": "Ms. Aditi Sharma",
+        "counselor": "Ms. Ammar Hasayen",
         "rating": 4.5
     },
     {
         "id": 6,
-        "image": "https://example.com/images/scholarship-guidance.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.EqzqNh9ZWwn1NpEfow2sUwHaDt%26pid%3DApi&f=1&ipt=d36d6efec0ba853ae3d70806f2d70ba57012ad164f2b4a4fd1a4e98208338561&ipo=images",
         "serviceName": "Scholarship Guidance Session",
         "category": "Online",
         "description": "Explore scholarships and learn how to apply with a personalized roadmap.",
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "image": "https://example.com/images/stream-selection.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcache.careers360.mobi%2Fmedia%2Fpresets%2F860X430%2Farticle_images%2F2022%2F2%2F22%2FStream-selection-for-class-11-featured-image.jpg&f=1&nofb=1&ipt=7f4c79ef4cd31f8ef806d84e43bf5ee30d3de6ce67c168bbf1d2c3d6a18bc378",
         "serviceName": "Stream Selection Counseling",
         "category": "Offline/One-on-One",
         "description": "Guidance for students in selecting academic streams after 10th grade.",
@@ -78,7 +78,7 @@
     },
     {
         "id": 8,
-        "image": "https://example.com/images/job-hunt.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.express-to-impress.com%2Fwp-content%2Fuploads%2F2021%2F11%2FJob-Search-Strategy-Thumbnail-Reduced.png&f=1&nofb=1&ipt=889881533cac15d48ba33ff2cc85dd92b26a253bc3762b00cf51315c45224995",
         "serviceName": "Job Search Strategy Session",
         "category": "Online",
         "description": "Develop a job-hunting strategy including platforms, networking, and follow-up tips.",
@@ -89,7 +89,7 @@
     },
     {
         "id": 9,
-        "image": "https://example.com/images/study-abroad.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.N64hJzwWU0JgzzM4szutIQHaEO%26pid%3DApi&f=1&ipt=03003aa66296458ba1b26f716cfa9fbc7d9c7e6325a3f6c6e13a0de2eb2451ba&ipo=images",
         "serviceName": "Study Abroad Consultation",
         "category": "Online",
         "description": "Discuss opportunities and plan your education overseas with expert advice.",
@@ -100,7 +100,7 @@
     },
     {
         "id": 10,
-        "image": "https://example.com/images/entrepreneurship.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.6RTJSQ6IS07ycFZmyC4hvwHaDt%26cb%3Diwc2%26pid%3DApi&f=1&ipt=e2da38132864f40888d25fd6771e518145be3d1091a0a5d893dcbaca885efe3c&ipo=images",
         "serviceName": "Entrepreneurship Mentoring",
         "category": "Online/Group",
         "description": "Group session focused on guiding aspiring entrepreneurs on their startup journey.",
@@ -111,7 +111,7 @@
     },
     {
         "id": 11,
-        "image": "https://example.com/images/skill-assessment.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.fjNRKG9jUhWCoMc0ZpuHUwHaD4%26cb%3Diwp2%26pid%3DApi&f=1&ipt=d8edf59946656e0cf3e220c363d49b785a9883532c7bf7c3177aee2aa8a30f0e&ipo=images",
         "serviceName": "Skill Assessment and Career Fit Test",
         "category": "Online",
         "description": "Assess your interests and skills to find your ideal career match.",
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "image": "https://example.com/images/personal-branding.jpg",
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.hjiDchBIcWH-Xk3NIU6LkwHaE8%26pid%3DApi&f=1&ipt=5803ac6fc57e5450d3380f8f90f88b3c6eb5ad3164a80c2b48f52715ec4272e8&ipo=images",
         "serviceName": "Personal Branding Session",
         "category": "Online",
         "description": "Learn how to present yourself professionally and build your unique brand.",
