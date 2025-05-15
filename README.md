@@ -75,7 +75,7 @@
 
 Clone the repository:
 ```bash
-git clone git@github.com:jabirstain3/gadget_heaven.git
+git clone git@github.com:jabirstain3/spring_life.git
 ```
 
 Navigate to the project directory:

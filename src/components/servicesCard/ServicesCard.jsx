@@ -17,13 +17,13 @@ const ServicesCard = ({ services }) => {
     }
 
     return (
-        <div className="border border-gray-300 bg-amber-50 w-full max-w-[280px] md:max-w-[320px] relative rounded-xl overflow-hidden">
+        <div className="border border-gray-300 bg-amber-50 w-full max-w-[320px] md:max-w-[360px] relative rounded-xl overflow-hidden">
 
             {/* badge */}
             <span className="bg-red-500 rounded-b-md px-3 py-1 text-[0.9rem] text-white absolute top-0 left-4">{category}</span>
 
             {/* product image */}
-            <img alt="product/image" src={image} className="w-full mt-6"/>
+            <img alt="product/image" src={image} className="w-full aspect-[5/3] mt-6"/>
 
             {/* product details */}
             <div className="p-4 pt-0">
