@@ -6,7 +6,7 @@ import { Bounce, ToastContainer } from "react-toastify"
 function App() {
 
   return (
-    <section className='w-full border'>
+    <section className='w-full'>
       <Navbar/>
       <div className="bg-[#def9cb8e]">
         <Outlet/>

@@ -17,6 +17,8 @@ const RegistrationPage = () => {
     const goTo = useToRoute();
     const toast = useToast()
 
+    document.title = "Register in to Spring Life";
+
     if (authLoading){
         return <div className="w-full h-screen">
             <Loader/>

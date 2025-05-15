@@ -2,6 +2,7 @@ import { useToRoute } from "../../hooks/useToRoute";
 
 const ErrorPage = () => {
     const goTo = useToRoute();
+    document.title = "Spring Life - Page not found";
 
     return (
         <div className="boxShadow px-10 w-full h-screen flex items-center flex-col justify-center py-20 rounded-xl">

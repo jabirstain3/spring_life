@@ -19,7 +19,7 @@ const DisplayServicesHome = ( ) => {
 
     
     return (
-        <div className="sectionBase border mx-auto my-4">
+        <div className="sectionBase mx-auto my-4">
             <h1 className="text-[2.5rem] font-bold text-center my-4">Our Service</h1>
             <div className="flex flex-wrap justify-center gap-4">
                 { items.length > 0 ? 

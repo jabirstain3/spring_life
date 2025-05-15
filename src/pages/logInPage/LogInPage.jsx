@@ -12,11 +12,10 @@ const LogInPage = () => {
     const location = useLocation();
     const goTo = useToRoute();
     const toast = useToast()
-    console.log(location);
-    
-
     const { logInUser, googleUser, /*facebookCreateUser*/ }= useContext(AuthContext);
+    console.log(location);
 
+    document.title = "Log in to Spring Life";
     const dest = location.state?.from?.pathname || "/";
     // console.log(dest);
     
@@ -33,9 +32,9 @@ const LogInPage = () => {
         logInUser(email, password)
         .then((result) =>{
             // console.log(result.user);
-            toast("success" , "Loged In Successfully.")
             e.target.reset();
             goTo(dest);
+            toast("success" , "Loged In Successfully.")
         })
         .catch((error)=>{
             toast("error" , "Authintication failed.")
@@ -47,8 +46,8 @@ const LogInPage = () => {
         googleUser()
         .then((result) =>{
             // console.log(result.user);
-            toast("success" , "Loged In Successfully.")
             goTo(dest);
+            toast("success" , "Loged In Successfully.")
         })
         .catch((error)=>{
             toast("error" , "Authintication failed.")
