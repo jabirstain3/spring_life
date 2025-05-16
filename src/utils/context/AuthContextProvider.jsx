@@ -6,53 +6,58 @@ import { GoogleAuthProvider, FacebookAuthProvider, createUserWithEmailAndPasswor
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState( null );
-    const [ authloading , setAuthloading ] = useState(true)
+    const [user, setUser] = useState(null);
+    const [authloading, setAuthloading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
-    // Creat user
-    const createUser = (email, password) =>{ 
-        return  createUserWithEmailAndPassword(auth, email, password);
-    }
+    // Create user
+    const createUser = (email, password) => {
+        setAuthloading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+    };
 
-    // Authintication
-    const logInUser = (email, password) =>{ 
+    // Authentication
+    const logInUser = (email, password) => {
+        setAuthloading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
+    };
 
-    const googleUser = () =>{ 
+    const googleUser = () => {
+        setAuthloading(true);
         return signInWithPopup(auth, googleProvider);
-    }
+    };
 
-    const facebookUser = () =>{ 
+    const facebookUser = () => {
+        setAuthloading(true);
         return signInWithPopup(auth, facebookProvider);
-    }
+    };
 
     // log out
-    const logOut = () => { 
-        setAuthloading(false)
+    const logOut = () => {
+        setAuthloading(true);
         return signOut(auth);
-    }
+    };
 
-    //Observe auth state change
-    useEffect( () => {
-        const unSubscribe = onAuthStateChanged(auth, currentuser =>{ 
-            if(currentuser){
+    // Observe auth state change
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentuser => {
+            if (currentuser) {
                 setUser(currentuser);
-                setAuthloading(false);
-            //     console.log(currentuser);
-            } else setUser(null);
+            } else {
+                setUser(null);
+            }
+            setAuthloading(false);
         });
-        
-        return ()=> {
-            unSubscribe();
-        }
-    },[])
 
-    const updateUserProfile = ( updatedData ) => {
-        return updateProfile(auth.currentUser, updatedData)
-    }
+        return () => {
+            unSubscribe();
+        };
+    }, []);
+
+    const updateUserProfile = (updatedData) => {
+        return updateProfile(auth.currentUser, updatedData);
+    };
 
     return (
         <AuthContext.Provider value={{ onAuthStateChanged, user, setUser, createUser, logInUser, googleUser, facebookUser, logOut, authloading, updateUserProfile }}>
