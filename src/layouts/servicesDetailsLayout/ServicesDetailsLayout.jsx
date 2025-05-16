@@ -11,7 +11,7 @@ const ServicesDetailsLayout = () => {
     // const [isFavorite, setIsFavorite] = useState()
     const { state } = useLocation();
         const toast = useToast()
-    // console.log(state);
+    console.log(state);
     document.title = "Spring Life - Services Details";
     const { image, serviceName, category, pricing, description, duration, counselor, } = state;
     const data = duration.split(" ");

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "services/:id",
-                element: <ProtectedRoute><ServicesDetailsLayout/></ProtectedRoute>,
+                element: <ProtectedRoute> <ServicesDetailsLayout/> </ProtectedRoute>,
                 // element: <ServicesDetailsLayout/>,
             },
         ]

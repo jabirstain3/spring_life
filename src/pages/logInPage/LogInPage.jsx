@@ -16,7 +16,7 @@ const LogInPage = () => {
     // console.log(location);
 
     document.title = "Log in to Spring Life";
-    const dest = location.state?.from?.pathname || "/";
+    const dest = location.state?.pathname || "/";
     // console.log(dest);
     
 
@@ -46,7 +46,7 @@ const LogInPage = () => {
         googleUser()
         .then((result) =>{
             // console.log(result.user);
-            goTo(dest);
+            goTo(dest, location.state?.state );
             toast("success" , "Loged In Successfully.")
         })
         .catch((error)=>{

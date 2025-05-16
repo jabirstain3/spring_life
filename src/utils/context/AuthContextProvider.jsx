@@ -7,39 +7,37 @@ export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState( null );
-    const [ authloading , setAuthloading ] = useState(false)
+    const [ authloading , setAuthloading ] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
 
     // Creat user
-    const createUser = (email, password) =>{
-        setAuthloading(true);
+    const createUser = (email, password) =>{ 
         return  createUserWithEmailAndPassword(auth, email, password);
     }
 
     // Authintication
-    const logInUser = (email, password) =>{
-        setAuthloading(true);
+    const logInUser = (email, password) =>{ 
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const googleUser = () =>{
+    const googleUser = () =>{ 
         return signInWithPopup(auth, googleProvider);
     }
 
-    const facebookUser = () =>{
+    const facebookUser = () =>{ 
         return signInWithPopup(auth, facebookProvider);
     }
 
     // log out
-    const logOut = () => {
-        setAuthloading(true);
+    const logOut = () => { 
+        setAuthloading(false)
         return signOut(auth);
     }
 
     //Observe auth state change
     useEffect( () => {
-        const unSubscribe = onAuthStateChanged(auth, currentuser =>{
+        const unSubscribe = onAuthStateChanged(auth, currentuser =>{ 
             if(currentuser){
                 setUser(currentuser);
                 setAuthloading(false);

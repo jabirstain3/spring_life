@@ -33,6 +33,7 @@ const Navbar = () => {
 
     const handelLogOut = () =>{
         logOut()
+        goTo('/')
     }
 
     return (
