@@ -50,19 +50,19 @@ const RegistrationPage = () => {
     const HandelRegistration = (e) =>{
         // const { createUser } = useContext(AuthContextProvider);
         e.preventDefault();
-        console.log(e);
+        // console.log(e);
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const photo = e.target.photo.value;
 
-        const user = { name, email, password, photo };
-        console.log(user);
+        // const user = { name, email, password, photo };
+        // console.log(user);
         const userinfo =  { displayName:name, photoURL:photo, }
         
         createUser(email, password)
             .then((result) =>{
-                console.log(result.user);
+                // console.log(result.user);
                 e.target.reset();
                 updateUserProfile(userinfo)
                     .then(() =>{

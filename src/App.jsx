@@ -1,7 +1,7 @@
-import { Outlet } from "react-router"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import { Bounce, ToastContainer } from "react-toastify"
+import { Outlet } from "react-router"
 
 function App() {
 

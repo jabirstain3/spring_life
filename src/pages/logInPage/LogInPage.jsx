@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../utils/context/AuthContextProvider";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useToRoute } from "../../hooks/useToRoute";
 import { useToast } from "../../hooks/useToast"
 import { Bounce, ToastContainer } from "react-toastify";
+import { NavLink, useLocation } from "react-router";
 
 const LogInPage = () => { 
     const [show, setShow] = useState(false)
@@ -13,7 +13,7 @@ const LogInPage = () => {
     const goTo = useToRoute();
     const toast = useToast()
     const { logInUser, googleUser, /*facebookCreateUser*/ }= useContext(AuthContext);
-    console.log(location);
+    // console.log(location);
 
     document.title = "Log in to Spring Life";
     const dest = location.state?.from?.pathname || "/";
@@ -59,7 +59,7 @@ const LogInPage = () => {
 
     const handelLogInWithFacebook = () => {
         // facebookCreateUser();
-        console.log("Facebook");
+        // console.log("Facebook");
         
     }
 

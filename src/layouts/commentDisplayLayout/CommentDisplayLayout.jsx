@@ -20,7 +20,7 @@ const CommentDisplayLayout = ({ srvs }) => {
         e.preventDefault();
 
         const text = e.target.comment.value;
-        console.log(text);
+        // console.log(text);
         
         const commentObj ={
             cmntId: Math.random(),
