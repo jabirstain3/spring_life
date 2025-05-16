@@ -16,14 +16,11 @@ export const BannerSlide = () => {
     return (
         <div className="w-full bannercontainer">
             <Swiper
-            // install Swiper modules
             modules={[ Pagination, Autoplay]}
             spaceBetween={50}
             slidesPerView={1}
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            // onSwiper={(swiper) => console.log(swiper)}
-            // onSlideChange={() => console.log('slide change')}
             loop={true}
             autoplay={{
                 delay: 2000,

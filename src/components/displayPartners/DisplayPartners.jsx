@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import './DisplayPartners.css'
 import 'swiper/css';
-
-// Import Swiper styles
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -14,7 +13,7 @@ export const DisplayPartners = () => {
         {image: "https://www.lifespringint.com/wp-content/uploads/2023/11/2.png.webp", id: 12300424 },
     ]
     return (
-        <div className="sectionBase mx-auto flex justify-center">
+        <div className="mx-auto flex justify-center bannercontainer2">
             <Swiper
             // install Swiper modules
             modules={[ Pagination, Autoplay]}
@@ -25,13 +24,13 @@ export const DisplayPartners = () => {
                 delay: 2000,
                 disableOnInteraction: true,
             }}
-            className="mySwiper"
+            className="swiper2 "
             >
                 {
                     banners.map((bnr) =>(
-                        <SwiperSlide >
-                            <div key={bnr.id} className="w-[180px] my-6 p-6">
-                                <img src={bnr.image} className='w-full aspect-square shadow-md'/>
+                        <SwiperSlide className='swiper-slide2' >
+                            <div key={bnr.id} className="">
+                                <img src={bnr.image} className='w-[140px] mx-auto aspect-square shadow-md'/>
                             </div>
                         </SwiperSlide>
                     ))
